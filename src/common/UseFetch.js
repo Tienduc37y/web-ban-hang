@@ -2,23 +2,31 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 export function UseFetch(){
     const [product,setProduct] = useState()
-    const [paging,setPaging] = useState({
-        page:1,
-        pageSize:20
-    })
     useEffect(()=>{
         axios({
-            url:`https://backoffice.nodemy.vn/api/products?populate=*&pagination[pageSize]=${paging.pageSize}&pagination[page]=${paging.page}`,
+            url:`https://backoffice.nodemy.vn/api/products?populate=*`,
         })
         .then((res)=>{
-            console.log(res.data.data)
             setProduct(res.data.data)
         })
-    },[paging.page,paging.pageSize])
+    },[])
     return {
         product,
         setProduct,
-        paging,
-        setPaging
+    }
+}
+export function GetProductToSlug(slug){
+    const [data,setData] = useState()
+    useEffect(()=>{
+        axios({
+            url:`https://backoffice.nodemy.vn/api/products/${slug}?populate=*`,
+        })
+        .then((res)=>{
+            setData(res.data.data)
+        })
+    },[])
+    return {
+        data,
+        setData
     }
 }
