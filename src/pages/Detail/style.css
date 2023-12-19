@@ -21,7 +21,12 @@ body {
     padding: 15px;
 }
 .product-image {
-    padding-right: 10px;
+    padding-right: 25px;
+}
+.big-img img{
+    width: 450px;
+    height: 450px;
+    padding: 10px;
 }
 .img-item img{
     width: 100px;
@@ -74,5 +79,5 @@ body {
     padding: 10px;
 }
 .paragraph{
-    font-size: 30px;
+    font-size: 25px;
 }
