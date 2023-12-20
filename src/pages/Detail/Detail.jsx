@@ -37,6 +37,7 @@ export default function Detail(){
                             <div className="product-brand">
                                 <h2>{data?.attributes?.name}</h2>
                                 <span>Thương Hiệu: {data?.attributes?.idBrand?.data?.attributes?.name}</span>
+                                <span>Danh mục: {data?.attributes?.idCategories?.data[0]?.attributes?.name}</span>
                             </div>
                             <div className="product-price">
                                 <h1>{newPrice} ₫</h1>
