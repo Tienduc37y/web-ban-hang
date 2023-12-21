@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link} from "react-router-dom"
 import { GetProductToSlug } from "../../common/UseFetch"
 import './style.css'
 import { useState } from "react"
+import Header from "../../component/Header/Header"
 export default function Detail(){
     const params = useParams()
     const {data,setData} = GetProductToSlug(params.slug)
@@ -12,7 +13,10 @@ export default function Detail(){
     const imgsmall = "https://backoffice.nodemy.vn" + data?.attributes?.image?.data[0]?.attributes?.formats?.thumbnail?.url
     var sale = 100 - ( data?.attributes?.price/ data?.attributes?.oldPrice)*100
     return (
-        <>
+        <div className="page-detail">  
+            <img src="src\assets\Top 100 hình ảnh và nền mèo thần tài và các vị thần ngộ nghĩnh độc đáo.jfif" alt="" />
+            <img src="src\assets\Top 100 hình ảnh và nền mèo thần tài và các vị thần ngộ nghĩnh độc đáo (1).jfif" alt="" />
+            <Header></Header>
             <div className="page-product">
                 <div className="container">
                     <div className="product-info between-between">
@@ -93,6 +97,7 @@ export default function Detail(){
                     </div>
                 </div>
             </div>
-        </>
+            
+        </div>
     )
 }

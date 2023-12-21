@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Detail from './pages/Detail/Detail.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-
+import Login from './pages/Login/Login.jsx'
+import Register from './pages/Register/Register.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -11,6 +12,12 @@ const router = createBrowserRouter([
   },{
     path: '/:slug',
     element: <Detail></Detail>
+  },{
+    path:'/login',
+    element: <Login></Login>
+  },{
+    path:'/register',
+    element: <Register></Register>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(

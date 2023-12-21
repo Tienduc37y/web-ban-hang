@@ -8,18 +8,15 @@
     justify-content: space-between;
     align-items: center;
     background-color: #3333;
+    position: fixed;
+    top: 0;
+    
 }
 .logo-shop img{
     width: 120px;
     height: 100px;
 }
-.user{
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    gap: 15px;
-}
+
 .link{
     color: #000;
     height: 70px;
