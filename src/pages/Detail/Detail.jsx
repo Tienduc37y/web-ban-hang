@@ -1,11 +1,9 @@
 import { useParams, Link} from "react-router-dom"
-import { GetProductToSlug } from "../../common/UseFetch"
 import './style.css'
 import { useState } from "react"
 import Header from "../../component/Header/Header"
 export default function Detail(){
     const params = useParams()
-    const {data,setData} = GetProductToSlug(params.slug)
     const [order,setOrder] = useState(1)
     const newPrice = new Intl.NumberFormat('vi-VN').format(data?.attributes?.price);
     const oldPrice = new Intl.NumberFormat('vi-VN').format(data?.attributes?.oldPrice);
