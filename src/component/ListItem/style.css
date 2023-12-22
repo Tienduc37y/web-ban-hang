@@ -1,0 +1,8 @@
+.product-items{
+    width: 1080px;
+    margin: 0 auto;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+}

@@ -7,24 +7,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3333;
+    background-color: #7bff00;
     position: fixed;
     top: 0;
-    
+    z-index: 999;
 }
 .logo-shop img{
     width: 120px;
     height: 100px;
 }
 
-.link{
+.link {
     color: #000;
     height: 70px;
     line-height: 70px;
     padding: 5px;
     font-size: 20px;
-}
-.link:hover{
-    background-color: rgb(243, 180, 180);
-    
 }

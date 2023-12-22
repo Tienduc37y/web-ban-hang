@@ -1,0 +1,40 @@
+
+.banner {
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 100px;
+  }
+  .banner-left{
+    display: flex;
+    flex-direction: column;
+  }
+  .banner-lt{
+    width: 700px;
+    height: 300px;
+    margin-bottom: 60px;
+  }
+  .banner-lb{
+    display: flex;
+  }
+  .banner-lb img,.banner-right img {
+    width: 350px;
+    height: 175px;
+  }
+  .banner-right{
+    padding: 0 15px;
+  }
+  .banner-lc img , .banner-rc img{
+    width: 100px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+  }
+  .banner-lc img {
+    left: 0;
+  }
+  .banner-rc img {
+    right: 0;
+  }
