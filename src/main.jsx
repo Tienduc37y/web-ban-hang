@@ -5,6 +5,7 @@ import Detail from './pages/Detail/Detail.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from './pages/Login/Login.jsx'
 import Register from './pages/Register/Register.jsx'
+import Product from './pages/Product/Product.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,6 +19,9 @@ const router = createBrowserRouter([
   },{
     path:'/register',
     element: <Register></Register>
+  },{
+    path:"/products",
+    element:<Product></Product>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(

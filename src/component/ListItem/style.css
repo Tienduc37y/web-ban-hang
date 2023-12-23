@@ -1,8 +1,42 @@
 .product-items{
     width: 1080px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 .pagination {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+}
+.nav-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 0 20px;
+}
+@keyframes nhapnhayx {
+    to {
+        box-shadow: 0 0 0 20px rgba(232,76,61,0)
+    }
+}
+.nav-product a .nhapnhayax{
+    cursor: pointer;
+    display: inline-block;
+    width: 200px;
+    margin: 20px 0;
+    padding: 7px 16px;
+    border-radius: 5px;
+    border: 1px solid;
+    color: #243a76;
+    font-size: 13px;
+    text-align: center;
+    animation: nhapnhayx 1.25s cubic-bezier(.66,0,0,1) infinite;
+    box-shadow: 0 0 0 0 #243a76;
+    transition: all .3s ease-in-out;
+}
+.card-product {
+    position: relative;
+}
+.sale{
+    top: 0;
 }

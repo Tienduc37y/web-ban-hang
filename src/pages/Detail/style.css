@@ -4,8 +4,31 @@ body {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+.container{
+    width: 1080px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
 .between-between {
     display: flex;
+    justify-content: space-between;
+}
+.page-product{
+    padding-top: 100px;
+    width: 100%;
+    background-color: #dbc5c5;
+}
+.product-info{
+    padding: 15px;
+}
+.gallery{
+    width: 400px;
+    padding: 50px;
+}
+.product-detail{
+    width: 560px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 .page-detail > img:nth-child(2) ,.page-detail > img:nth-child(1){
@@ -13,48 +36,7 @@ body {
     height: 500px;
     padding: 35px;
 }
-.page-detail > img:nth-child(1){
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.page-detail > img:nth-child(2){
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.page-product{
-    padding-top: 100px;
-    width: 100%;
-    background-color: #dbc5c5;
-}
 
-/* .container{
-    width: 1080px;
-    margin: 0 auto;
-    background-color: #ffffff;
-} */
-.product-info{
-    padding: 15px;
-}
-.product-image {
-    padding-right: 25px;
-}
-.big-img img{
-    width: 450px;
-    height: 450px;
-    margin-bottom: 10px;
-}
-.img-item img{
-    width: 100px;
-}
-.product-detail{
-    display: flex;
-    flex-direction: column;
-    gap: 45px;
-}
 .product-brand{
     font-size: 20px;
 }
@@ -62,9 +44,16 @@ body {
     margin: 0 0 20px 0;
 
 }
-.product-brand span {
+.product-brand > span:nth-child(2) {
     display: block;
     padding-bottom: 20px;
+}
+.product-brand span:last-child span {
+    display: inline;
+    background-color: rgb(238, 77, 45);
+    border-radius: 5px;
+    padding: 0.1875rem 0.25rem;
+    margin-right: 5px;
 }
 .product-price h1{
     color: red;
@@ -82,10 +71,15 @@ body {
     background-color: rgb(255, 215, 215);
 }
 .product-quantity{
+    display: flex;
+    align-items: center;
     gap: 50px;
     font-size: 20px;
 }
 .product-quantity .value-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 .value-order button{

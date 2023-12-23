@@ -1,9 +1,8 @@
 
 .banner {
     width: 1080px;
-    margin: 0 auto;
+    margin: 100px auto;
     display: flex;
-    margin-top: 100px;
   }
   .banner-left{
     display: flex;
@@ -16,9 +15,10 @@
   }
   .banner-lb{
     display: flex;
+    justify-content: space-between;
   }
   .banner-lb img,.banner-right img {
-    width: 350px;
+    width: 340px;
     height: 175px;
   }
   .banner-right{
@@ -30,7 +30,8 @@
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    padding: 20px;
+    margin: 0 30px;
+    z-index: 99;
   }
   .banner-lc img {
     left: 0;

@@ -3,14 +3,9 @@ import "./style.css"
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { UseFetch } from "../../common/UseFetch";
+import Carousel from "../Carousel/Carousel";
 function Banner() {
   const {product,setProduct,paging,setPaging} = UseFetch(`${import.meta.env.VITE_BASE_URL}/api/homepage`)
-  const img = product?.attributes?.leftBanner?.data.map(item=>{
-    return {
-      original:'https://backoffice.nodemy.vn' + item?.attributes?.url,
-      thumbnail:'https://backoffice.nodemy.vn' + item?.attributes?.url,
-    }
-  })
   return (
     <>      
       <div className='banner-lc'>
@@ -22,17 +17,17 @@ function Banner() {
       <div className='banner'>
         <div className='banner-left'>
           <div className='banner-lt'>
-            {img ? <ImageGallery items={img} showPlayButton={false} showFullscreenButton={false} showThumbnails={false}/> : <h1>Không có banner</h1>}
+            <Carousel thumbnail={false} params={`homepage`} type={`leftBanner`}></Carousel>
           </div>
           <div className='banner-lb'>
             <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.subBanner?.data[0]?.attributes?.url}`} alt="" />
-            <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.subBanner?.data[0]?.attributes?.url}`} alt="" />
+            <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.subBanner?.data[1]?.attributes?.url}`} alt="" />
           </div>
         </div>
         <div className='banner-right'>
           <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.bottomBanner?.data[2]?.attributes?.url}`} alt="" />
             <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.bottomBanner?.data[1]?.attributes?.url}`} alt="" />
-          <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.subBanner?.data[0]?.attributes?.url}`} alt="" />
+          <img src={`${import.meta.env.VITE_BASE_URL}${product?.attributes?.subBanner?.data[2]?.attributes?.url}`} alt="" />
         </div>
       </div>    
     </>
