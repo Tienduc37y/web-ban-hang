@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-export function UseFetch(url){
+export function UseFetch(url,param){
     const [product,setProduct] = useState()
     const [paging,setPaging] = useState({
         page:1,
         pageSize:4,
         total:10
     })
-    url += `?populate=*&pagination[pageSize]=${paging.pageSize}&pagination[page]=${paging.page}` 
+    url += `?populate=*&pagination[pageSize]=${paging.pageSize}&pagination[page]=${paging.page}&${param}`
     useEffect(()=>{
         axios({
             url: url,
@@ -24,19 +24,19 @@ export function UseFetch(url){
         setPaging
     }
 }
-// export function UseFetchAll(url,query){
-//     const [product,setProduct] = useState()
-//     url += `?populate=*&${query}` 
-//     useEffect(()=>{
-//         axios({
-//             url: url,
-//         })
-//         .then((res)=>{
-//             setProduct(res.data.data)
-//         })
-//     },[])
-//     return {
-//         product,
-//         setProduct,
-//     }
-// }
+export function UseFetchAll(url){
+    const [product,setProduct] = useState()
+    url += `?populate=*` 
+    useEffect(()=>{
+        axios({
+            url: url,
+        })
+        .then((res)=>{
+            setProduct(res.data.data)
+        })
+    },[])
+    return {
+        product,
+        setProduct,
+    }
+}

@@ -4,9 +4,10 @@ import { Row, Col, Pagination, Card} from 'antd'
 import { Link } from 'react-router-dom';
 const {Meta} = Card
 export default function ListProductByCategory(props){
-    const {product,setProduct} = UseFetch(`https://backoffice.nodemy.vn/api/products` + `filters[idCategories][slug]=${props.slugs}`)
+    const {product,setProduct} = UseFetch(`https://backoffice.nodemy.vn/api/products`, `filters[idCategories][slug]=${props.slugs}`)
     return (
-        <>
+        <div className='container'>
+        <h1>{props.slugs}</h1>
         {
             <Row>
             {product?.map(item=>{
@@ -48,6 +49,6 @@ export default function ListProductByCategory(props){
             })}
         </Row>
         }
-        </>
+        </div>
     )
 }

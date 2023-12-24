@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "./style.css"
 const {Meta} = Card
 function ListProduct(){
-    const {product,setProduct,paging,setPaging} = UseFetch(`https://backoffice.nodemy.vn/api/products`)
+    const {product,setProduct,paging,setPaging} = UseFetch(`https://backoffice.nodemy.vn/api/products`," ")
 
     return (
     <div className='product-items'>

@@ -1,4 +1,4 @@
-import { useParams, Link} from "react-router-dom"
+import { useParams, Link, useNavigate} from "react-router-dom"
 import './style.css'
 import { useState } from "react"
 import Header from "../../component/Header/Header"
@@ -8,7 +8,8 @@ import ImageGallery from "react-image-gallery";
 export default function Detail(){
     const param = useParams()
     const [order,setOrder] = useState(1)
-    const {product,setProduct} = UseFetch(`${import.meta.env.VITE_BASE_URL}/api/products/${param.slug}`)
+    const nav = useNavigate()
+    const {product,setProduct} = UseFetch(`${import.meta.env.VITE_BASE_URL}/api/products/${param.slug}`," ")
     const newPrice = new Intl.NumberFormat('vi-VN').format(product?.attributes?.price);
     const oldPrice = new Intl.NumberFormat('vi-VN').format(product?.attributes?.oldPrice);
     var sale = 100 - ( product?.attributes?.price/ product?.attributes?.oldPrice)*100
@@ -58,11 +59,15 @@ export default function Detail(){
                                     <span>{product?.attributes?.quantityAvailable} sản phẩm có sẵn</span>
                             </div>
                             <div className="product-buy between-between">
-                                <button type="button">
+                                <button type="button" onClick={()=>{
+                                    nav("/cart")
+                                }}>
                                     <i class="fa-solid fa-cart-plus"></i>
                                     <span>Thêm vào giỏ hàng</span>
                                 </button>
-                                <button type="button">
+                                <button type="button" onClick={()=>{
+                                    nav("/cart")
+                                }}>
                                     <span>Mua hàng</span>
                                 </button>
                             </div>
