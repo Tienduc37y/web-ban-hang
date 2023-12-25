@@ -24,18 +24,3 @@
   .banner-right{
     padding: 0 15px;
   }
-  .banner-lc img , .banner-rc img{
-    width: 100px;
-    height: 400px;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0 30px;
-    z-index: 99;
-  }
-  .banner-lc img {
-    left: 0;
-  }
-  .banner-rc img {
-    right: 0;
-  }

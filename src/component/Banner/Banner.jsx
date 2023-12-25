@@ -8,12 +8,6 @@ function Banner() {
   const {product,setProduct,paging,setPaging} = UseFetch(`${import.meta.env.VITE_BASE_URL}/api/homepage`)
   return (
     <>      
-      <div className='banner-lc'>
-        <img src="src\assets\Top 100 hình ảnh và nền mèo thần tài và các vị thần ngộ nghĩnh độc đáo (1).jfif" alt="" />
-      </div>
-      <div className='banner-rc'>
-        <img src="src\assets\Top 100 hình ảnh và nền mèo thần tài và các vị thần ngộ nghĩnh độc đáo.jfif" alt="" />
-      </div>
       <div className='banner'>
         <div className='banner-left'>
           <div className='banner-lt'>

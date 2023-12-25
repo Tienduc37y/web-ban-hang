@@ -1,3 +1,4 @@
 h1{
     text-align: center;
 }
+/*     const {product,setProduct,setPaging,paging} = UseFetch(`https://backoffice.nodemy.vn/api/products`,props.slugs) */

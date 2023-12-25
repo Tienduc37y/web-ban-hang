@@ -4,24 +4,29 @@ import { Row, Col, Pagination, Card} from 'antd'
 import { Link } from 'react-router-dom';
 const {Meta} = Card
 export default function ListProductByCategory(props){
-    const {product,setProduct} = UseFetch(`https://backoffice.nodemy.vn/api/products`, `filters[idCategories][slug]=${props.slugs}`)
+    const {product,setProduct,setPaging,paging} = UseFetch(`https://backoffice.nodemy.vn/api/products`,props.slugs)
+    console.log(props.slugs)
     return (
         <div className='container'>
-        <h1>{props.slugs}</h1>
-        {
+            <div className='nav-category'>
+                <Link to={`/category?danhmuc=ban-phim`}>
+                        <a href="" className='nhapnhayax'>Xem tất cả sản phẩm ...</a>
+                </Link> 
+            </div>
             <Row>
             {product?.map(item=>{
                 const newPrice = new Intl.NumberFormat('vi-VN').format(item?.attributes?.price);
                 const oldPrice = new Intl.NumberFormat('vi-VN').format(item?.attributes?.oldPrice);
                 return (
                     <>
-                        <Col span={6} key={item?.id}>
-                            <Link to={`/${item?.attributes?.slug}`}>
+                        <Col span={6}>
+                            <Link to={`/${item?.attributes?.slug}`} key={item?.id}>
                                 <Card
                                     className='card-product'
                                     hoverable
                                     style={{
-                                    width: 250,
+                                    width: 200,
+                                    height:350
                                     }}
                                     cover={<img alt="example" src={`https://backoffice.nodemy.vn${item?.attributes?.image?.data[0]?.attributes?.url}`} />}
                                 >
@@ -39,16 +44,16 @@ export default function ListProductByCategory(props){
                                     }
                                     >
                                     </Meta>
-                                    <h5>Chip : {item?.attributes?.cpu?.slice(0,20)}</h5>
-                                    <h5>Ram : {item?.attributes?.ram?.slice(0,20)}</h5>
                                 </Card>
                             </Link>
                         </Col>
                     </>
                 )
             })}
-        </Row>
-        }
+            </Row>
+            <Pagination total={paging.total} current={paging.page} pageSize={paging.pageSize} onChange={(page)=>{
+                setPaging({...paging,page:page})
+            }} className='pagination'/>;
         </div>
     )
 }
