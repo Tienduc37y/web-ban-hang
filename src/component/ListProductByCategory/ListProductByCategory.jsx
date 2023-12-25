@@ -20,13 +20,15 @@ export default function ListProductByCategory(props){
                 return (
                     <>
                         <Col span={6}>
-                            <Link to={`/${item?.attributes?.slug}`} key={item?.id}>
+                            <Link to={`/${item?.attributes?.slug}`}>
                                 <Card
+                                    key={item?.id}
                                     className='card-product'
                                     hoverable
                                     style={{
-                                    width: 200,
-                                    height:350
+                                    width: 250,
+                                    height:400,
+                                    marginLeft:20
                                     }}
                                     cover={<img alt="example" src={`https://backoffice.nodemy.vn${item?.attributes?.image?.data[0]?.attributes?.url}`} />}
                                 >
